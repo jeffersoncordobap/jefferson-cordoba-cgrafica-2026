@@ -2,24 +2,18 @@
     --primary: #0d5bea;
     --primary-hover: #084cc7;
     --primary-light: #edf4ff;
-
     --navy: #071837;
     --text: #16213a;
     --muted: #667085;
-
     --border: #dfe5ee;
     --background: #ffffff;
     --background-soft: #f7f9fc;
-
     --danger: #c62828;
-
     --radius-sm: 8px;
     --radius-md: 14px;
     --radius-lg: 22px;
-
     --shadow:
         0 24px 70px rgba(15, 40, 80, 0.10);
-
     --container: 980px;
 }
 
@@ -33,7 +27,6 @@ html {
 
 body {
     margin: 0;
-
     font-family:
         Inter,
         system-ui,
@@ -41,13 +34,12 @@ body {
         BlinkMacSystemFont,
         "Segoe UI",
         sans-serif;
-
-    background-color:
+    background:
         var(--background-soft);
-
     color:
         var(--text);
 }
+
 
 .form-page {
     min-height: 100vh;
@@ -62,16 +54,12 @@ body {
     width:
         min(100%,
             var(--container));
-
     margin-inline:
         auto;
-
     padding:
         42px;
-
-    background-color:
+    background:
         var(--background);
-
     border:
         1px solid var(--border);
     border-radius:
@@ -92,8 +80,7 @@ body {
         var(--primary);
     font-size:
         .76rem;
-    font-weight:
-        800;
+    font-weight: 800;
     letter-spacing:
         .12em;
 }
@@ -118,14 +105,40 @@ body {
         var(--muted);
     line-height:
         1.7;
-
 }
 
 .contact-form {
     display:
         grid;
     gap:
-        24px;
+        26px;
+}
+
+.form-block {
+    display:
+        grid;
+    gap:
+        20px;
+    padding-bottom:
+        8px;
+}
+
+.form-block h2 {
+    margin:
+        0;
+    color:
+        var(--navy);
+    font-size: 1.15rem;
+}
+
+.form-grid {
+    display:
+        grid;
+    grid-template-columns:
+        repeat(2,
+            minmax(0, 1fr));
+    gap:
+        20px;
 }
 
 .form-field {
@@ -162,8 +175,7 @@ fieldset legend {
         var(--text);
     font:
         inherit;
-    outline:
-        none;
+    outline: none;
     transition:
         border-color 160ms ease,
         box-shadow 160ms ease,
@@ -171,13 +183,16 @@ fieldset legend {
 }
 
 .form-field textarea {
-    resize: vertical;
-    min-height: 150px;
+    min-height:
+        150px;
+    resize:
+        vertical;
 }
 
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-    color: #98a2b3;
+    color:
+        #98a2b3;
 }
 
 .form-field input:focus,
@@ -189,172 +204,113 @@ fieldset legend {
         0 0 0 4px rgba(13, 91, 234, 0.10);
 }
 
-.button:focus-visible,
 .form-field input:focus-visible,
 .form-field select:focus-visible,
-.form-field textarea:focus-visible {
+.form-field textarea:focus-visible,
+.button:focus-visible {
     outline:
-        3px solid rgba(13, 91, 234, 0.30);
+        3px solid rgba(13, 91, 234, 0.28);
     outline-offset:
         2px;
 }
 
-.form-field input:not(:placeholder-shown):valid,
-.form-field textarea:not(:placeholder-shown):valid {
-    border-color:
-        #2e7d32;
+.form-field select {
+    appearance:
+        none;
+    background-image:
+        linear-gradient(45deg,
+            transparent 50%,
+            var(--muted) 50%),
+        linear-gradient(135deg,
+            var(--muted) 50%,
+            transparent 50%);
+    background-position:
+        calc(100% - 18px) 50%,
+        calc(100% - 13px) 50%;
+    background-size:
+        5px 5px,
+        5px 5px;
+    background-repeat:
+        no-repeat;
+    padding-right:
+        42px;
 }
 
-.form-field input:not(:placeholder-shown):invalid,
-.form-field textarea:not(:placeholder-shown):invalid {
-    border-color:
+fieldset {
+    margin:
+        0;
+    padding:
+        22px;
+    border:
+        1px solid var(--border);
+    border-radius:
+        var(--radius-md);
+}
+
+fieldset legend {
+    padding:
+        0 8px;
+}
+
+.choice-list {
+    display:
+        grid;
+    gap:
+        12px;
+    margin-top:
+        8px;
+}
+
+.choice {
+    display:
+        flex;
+    align-items:
+        flex-start;
+    gap:
+        10px;
+    color:
+        var(--text);
+    cursor:
+        pointer;
+}
+
+.choice input {
+    margin-top:
+        3px;
+    accent-color:
+        var(--primary);
+}
+
+.field-help {
+    color:
+        var(--muted);
+    font-size:
+        .82rem;
+    line-height:
+        1.5;
+}
+
+.required-mark {
+    color:
         var(--danger);
 }
 
-.form-grid {
-    display:
-        grid;
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-    gap:
-        20px;
-}
-
-
-fieldset {
-    margin:
-        0;
-    padding: 22px;
-    border:
-        1px solid var(--border);
-    border-radius:
-        var(--radius-md);
-}
-
-fieldset legend {
-    padding:
-        0 8px;
-}
-
-.choice-list {
-    display:
-        grid;
-    gap:
-        12px;
-    margin-top:
-        8px;
-}
-
-.choice {
-    display:
-        flex;
-    align-items:
-        flex-start;
-    gap:
-        10px;
+.form-field input:disabled,
+.form-field select:disabled,
+.form-field textarea:disabled {
+    background:
+        #f2f4f7;
+    color:
+        #98a2b3;
     cursor:
-        pointer;
+        not-allowed;
 }
 
-.choice input {
-    margin-top:
-        3px;
-    accent-color:
-        var(--primary);
+.form-field input[readonly] {
+    background:
+        #f8fafc;
 }
 
-.form-terminos {
-    display: flex;
-    align-items: center;
-    gap: 0.5;
-}
-
-fieldset {
-    margin:
-        0;
-    padding: 22px;
-    border:
-        1px solid var(--border);
-    border-radius:
-        var(--radius-md);
-}
-
-fieldset legend {
-    padding:
-        0 8px;
-}
-
-.choice-list {
-    display:
-        grid;
-    gap:
-        12px;
-    margin-top:
-        8px;
-}
-
-.choice {
-    display:
-        flex;
-    align-items:
-        flex-start;
-    gap:
-        10px;
-    cursor:
-        pointer;
-}
-
-.choice input {
-    margin-top:
-        3px;
-    accent-color:
-        var(--primary);
-}
-
-.form-field select {
-    appearance:
-        none;
-    background-image:
-        linear-gradient(45deg,
-            transparent 50%,
-            var(--muted) 50%),
-        linear-gradient(135deg,
-            var(--muted) 50%,
-            transparent 50%);
-    background-position:
-        calc(100% - 18px) 50%,
-        calc(100% - 13px) 50%;
-    background-size:
-        5px 5px,
-        5px 5px;
-    background-repeat:
-        no-repeat;
-    padding-right:
-        42px;
-}
-
-
-.form-field select {
-    appearance:
-        none;
-    background-image:
-        linear-gradient(45deg,
-            transparent 50%,
-            var(--muted) 50%),
-        linear-gradient(135deg,
-            var(--muted) 50%,
-            transparent 50%);
-    background-position:
-        calc(100% - 18px) 50%,
-        calc(100% - 13px) 50%;
-    background-size:
-        5px 5px,
-        5px 5px;
-    background-repeat:
-        no-repeat;
-    padding-right:
-        42px;
-}
 
 .form-actions {
     display:
@@ -426,6 +382,7 @@ fieldset legend {
         var(--background-soft);
 }
 
+
 @media (max-width: 720px) {
     .form-section {
         padding:
@@ -442,5 +399,15 @@ fieldset legend {
     .form-grid {
         grid-template-columns:
             1fr;
+    }
+
+    .form-actions {
+        flex-direction:
+            column;
+    }
+
+    .button {
+        width:
+            100%;
     }
 }
