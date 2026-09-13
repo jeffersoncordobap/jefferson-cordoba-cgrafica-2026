@@ -1,0 +1,120 @@
+:root {
+    --button-primary: #eecff3;
+    --button-hover: #efa9fa;
+
+    --text-light: #fdf4ff;
+    --text-dark: #2e1065;
+    --text-muted: #7e22ce;
+
+    --accent-green: #10b981;
+    --accent-green-hover: #059669;
+
+    --bg-page: #faf5ff;
+    --bg-input: #fcfaef;
+
+    --border-color: #e9d5ff;
+    --border-focus: #c084fc;
+    --danger: #ef4444;
+
+
+    --radius-sm: 4px;
+    --radius-md: 12px;
+    --shadow-card: 0 20px 25px -5px rgba(88, 28, 135, 0.1), 0 8px 10px -6px rgba(88, 28, 135, 0.04);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.form-flex{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.form-page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-page);
+}
+
+.form-section {
+    width: 90%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background: linear-gradient(135deg, #ffffff 30%, #f5eff5 100%);;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.form-field, 
+.form-actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    margin: 5px;
+    padding: 5px;
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-input);
+    border: 2px solid var(--border-color);
+}
+
+input:focus,.form-commet textarea:focus{
+    border: 2px solid var(--border-focus);
+    outline: none;
+}
+
+.button{
+    background-color: var(--button-primary);
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    width: clamp(100px, 10vw, 200px);
+    height:clamp(25px, 5vh, 25px) ;
+}
+
+.button:hover{
+    background-color: var(--button-hover);
+    border: 1px solid var(--border-focus);
+} 
+
+
+.form-comment{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.form-comment textarea{
+    width:95%;
+    min-height:150px;
+    resize:vertical;
+    padding: 10px;
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-input);
+    border: 2px solid var(--border-color);
+    font-family: inherit;
+}

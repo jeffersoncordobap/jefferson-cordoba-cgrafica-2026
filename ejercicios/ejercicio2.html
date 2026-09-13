@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" href="ejercicio2.css">
+</head>
+
+<body>
+    <main class="form-page">
+        <section class="form-section">
+            <header class="form-header">
+                <h1>Formulario de reserva</h1>
+            </header>
+    
+            <form class="form" action="#" method="post">
+
+                <div class="form-flex">
+                    <div class="form-field">
+                        <label for="date">Fecha<span class="required-mark" aria-hidden="true">* </span> </label>
+                        <input type="date" id="date" name="date"required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="hour">Hora<span class="required-mark" aria-hidden="true">* </span></label>
+                        <input type="time" id="hour" name="hour" placeholder="usuario@gmail.com" required>
+                    </div>
+                </div>    
+
+                <div class="form-field form-comment">
+                    <label for="comment">Comentario</label>
+                    <textarea name="comment" id="comment" rows="7" maxlength="1200" placeholder="Deja un comentario..."></textarea>
+                     <small class="field-help">
+                            Máximo 1200 caracteres.
+                    </small>
+                </div>
+
+                <div class="form-actions">
+                        <button type="submit" class="button button-primary">
+                            Enviar
+                        </button>
+                    </div>
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
