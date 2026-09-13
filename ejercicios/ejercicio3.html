@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <link rel="stylesheet" href="ejercicio3.css">
+</head>
+
+<body>
+    <main class="form-page">
+        <section class="form-section">
+            <header class="form-header">
+                <h1>Encuesta de Satisfacción</h1>
+            </header>
+
+            <form class="form" action="#" method="post">
+
+                <fieldset class="form-fieldset">
+                    <legend>¿Cómo fue tu experiencia?</legend>
+                    <div class="choice-list">
+                        <label class="choice">
+                            <input type="radio" name="experiencia" value="excelente" required>
+                            <span>Excelente</span>
+                        </label>
+                        <label class="choice">
+                            <input type="radio" name="experiencia" value="buena">
+                            <span>Buena</span>
+                        </label>
+                        <label class="choice">
+                            <input type="radio" name="experiencia" value="regular">
+                            <span>Regular</span>
+                        </label>
+                        <label class="choice">
+                            <input type="radio" name="experiencia" value="mala">
+                            <span>Mala</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-fieldset">
+                    <legend>¿Qué te gustó?</legend>
+                    <div class="choice-list">
+                        <label class="choice">
+                            <input type="checkbox" name="gustos" value="diseño">
+                            <span>Diseño</span>
+                        </label>
+                        <label class="choice">
+                            <input type="checkbox" name="gustos" value="velocidad">
+                            <span>Velocidad</span>
+                        </label>
+                        <label class="choice">
+                            <input type="checkbox" name="gustos" value="facilidad">
+                            <span>Facilidad de uso</span>
+                        </label>
+                        <label class="choice">
+                            <input type="checkbox" name="gustos" value="soporte">
+                            <span>Soporte</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div class="form-field">
+                    <label for="satisfaccion">¿Qué tan satisfecho estás? (1-10)</label>
+                    <div class="range-container">
+                        <input type="range" id="satisfaccion" name="satisfaccion" min="1" max="10" value="5" class="range-input">
+                        <span class="range-value" id="rangeValue">5</span>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="button button-primary">
+                        Enviar Encuesta
+                    </button>
+                    <button type="reset" class="button button-secondary">
+                        Limpiar
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+</body>
+
+</html>
